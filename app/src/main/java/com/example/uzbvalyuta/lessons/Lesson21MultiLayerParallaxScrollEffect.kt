@@ -85,34 +85,31 @@ fun Lesson21MultiLayerParallaxScrollEffect() {
                     )
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.img_1),
-                    contentDescription = "outer bg",
+                    painter = painterResource(id = R.drawable.ic_moonbg),
+                    contentDescription = "moon",
                     contentScale = ContentScale.FillWidth,
                     alignment = Alignment.BottomCenter,
                     modifier = Modifier.matchParentSize()
+                        .graphicsLayer {
+                            translationY = moonOffset
+                        }
                 )
                 Image(
-                    painter = painterResource(id = R.drawable.img_8),
+                    painter = painterResource(id = R.drawable.ic_midbg),
                     contentDescription = "mid bg",
                     contentScale = ContentScale.FillWidth,
                     alignment = Alignment.BottomCenter,
-                    modifier = Modifier
-                        .matchParentSize()
+                    modifier = Modifier.matchParentSize()
                         .graphicsLayer {
                             translationY = midBgOffset
                         }
                 )
                 Image(
-                    painter = painterResource(id = R.drawable.ic_moon),
-                    contentDescription = "moon",
+                    painter = painterResource(id = R.drawable.ic_outerbg),
+                    contentDescription = "outer bg",
                     contentScale = ContentScale.FillWidth,
                     alignment = Alignment.BottomCenter,
-                    modifier = Modifier
-                        .matchParentSize()
-                        .padding(30.dp)
-                        .graphicsLayer {
-                            translationY = moonOffset
-                        }
+                    modifier = Modifier.matchParentSize()
                 )
             }
         }
